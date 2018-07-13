@@ -12,8 +12,9 @@ const reducer = (state = initialState, action) =>{
         ...state,
           conversation: state.conversation.concat({
             key: state.id,
-            message: action.message,
-            response: action.response
+            text: action.text,
+            sender: action.sender,
+            messageTime: (new Date).getTime()
           }),
           id: state.id+1
       }
